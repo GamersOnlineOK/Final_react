@@ -19,3 +19,5 @@ Deberas instalar la libreria SweetAlert2.
 
 Referencia: https://sweetalert2.github.io/#download.
 
+### `Enlace a video Resumen`
+https://youtu.be/140KzvJeJc0

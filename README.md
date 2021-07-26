@@ -1,6 +1,5 @@
-# Getting Started with Create React App
+![gif](https://user-images.githubusercontent.com/55451723/127056999-148a14fe-01fc-47d6-b29a-3ab30377aefa.gif)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -12,7 +11,6 @@ Se abrira en local Host sobre el puerto 3000.
 Abre [http://localhost:3000](http://localhost:3000) para ver en el explorador.
 
 ## Adicionales.
-
 Deberas instalar la libreria SweetAlert2.
 
 ### `npm install sweetalert2`

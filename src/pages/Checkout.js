@@ -23,7 +23,7 @@ function Checkout(props) {
         const phone = document.getElementById("phone").value;
         const email = document.getElementById("email").value;
         
-        if ((name.lenght>3 )&& (phone>8) && (email>6)) {
+        
             setUserName(name);
         var date=new Date();
 
@@ -49,10 +49,7 @@ function Checkout(props) {
 
         })
             
-        } else {
-            $("#msnAlert").empty();
-            $("#msnAlert").append(`<p>Completa todos los datos Por favor</p>`);
-        }
+        
         
     }
     

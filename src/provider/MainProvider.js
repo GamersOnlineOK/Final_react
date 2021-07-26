@@ -62,14 +62,14 @@ export function MainProvider({ children }) {
     }
     function SetLocalStorage(carts) {
         localStorage.setItem("cart", JSON.stringify(carts));
-        console.log(carts);
+        
     }
     function totalCart(carts) {
 
       
         
         
-        const suma=carts.reduce((acc, i) => (acc += i.total), 0);
+        const suma=carts.reduce((acc, i) => (acc += i.total), 0).toFixed(2);
         const totalItems=carts.reduce((acc,i)=>(acc+= i.cantidad),0);
 
         setTotalItem(totalItems);

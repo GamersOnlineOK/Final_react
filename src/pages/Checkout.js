@@ -1,5 +1,6 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
+import $ from 'jquery'; 
 import { useMainConsume } from '../provider/MainProvider';
 import { getFirestore, storage } from '../firebase/firebase';
 import DetailCheckout from './DetailCheckout';
@@ -21,7 +22,9 @@ function Checkout(props) {
         const name = document.getElementById("name").value;
         const phone = document.getElementById("phone").value;
         const email = document.getElementById("email").value;
-        setUserName(name);
+        
+        if ((name.lenght>3 )&& (phone>8) && (email>6)) {
+            setUserName(name);
         var date=new Date();
 
         
@@ -45,6 +48,12 @@ function Checkout(props) {
 
 
         })
+            
+        } else {
+            $("#msnAlert").empty();
+            $("#msnAlert").append(`<p>Completa todos los datos Por favor</p>`);
+        }
+        
     }
     
     if (pago == false) {
@@ -57,7 +66,7 @@ function Checkout(props) {
                     <div className="row">
                         <div className="mb-3 col">
                         <label for="name" className="form-label">Nombre</label>
-                        <input type="text" className="form-control" id="name" />
+                        <input type="text" className="form-control" id="name" required />
                         
                     </div>
                     <div className="mb-3 col">
@@ -72,6 +81,9 @@ function Checkout(props) {
                         <input type="email" className="form-control" id="email" />
                         
                     </div>
+                    <div id="msnAlert">
+
+                    </div>
                                        
                     
                     <button type="submit" onClick={cargarUser} className="btn btn-success">Realizar Pago</button>
@@ -79,6 +91,7 @@ function Checkout(props) {
             </div>
             <div className="col-12 col-md-5">
                 <h3 className="border-bottom">Detalle de tu compra</h3>
+
                 <ul className="list-group list-group-numbered">
                 {carts !== null? (
                 carts.map((data, index) => {
